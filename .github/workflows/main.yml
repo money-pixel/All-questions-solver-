@@ -16,3 +16,11 @@ jobs:
 
       - name: Run JavaScript File
         run: node index.js
+- name: Save Output to File
+  run: echo "Hello, GitHub Actions!" > output.txt
+
+- name: Upload Artifact
+  uses: actions/upload-artifact@v3
+  with:
+    name: output-file
+    path: output.txt
